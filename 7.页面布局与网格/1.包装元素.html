@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 包装元素
+        1.包装元素居中
+        2.最大宽度使用em
+        3.稍微小于100%的宽度
+         */
+        .wrapper {
+            margin: 0;
+            background-color:black;
+            width: 95%;
+            max-width: 76em;
+            margin: 0 auto;
+            color: white;
+        }
+
+        .mathead h1{
+            padding: 0 2em;
+        }
+        .navlist{
+            list-style: none;
+            display: flex;
+            width: 100%;
+        }
+
+        .navlist li{
+            flex:1;
+            text-align: center;
+        }
+
+        .navlist a{
+            color: white;
+            text-decoration: none;
+        }
+
+    </style>
+
+
+</head>
+
+<body>
+    <header class="mathead">
+        <div class="wrapper">
+            <h1>Import News</h1>
+        </div>
+    </header>
+
+    <nav class="navbar" role="navigation">
+        <div class="wrapper">
+            <ul class="navlist">
+                <li><a href="/">HOME</a></li>
+                <li><a href="/">WORLD</a></li>
+                <li><a href="/">LOCAL</a></li>
+                <li><a href="/">SPORTS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="wrapper">
+        
+    </main>
+
+
+</body>
+
+</html>

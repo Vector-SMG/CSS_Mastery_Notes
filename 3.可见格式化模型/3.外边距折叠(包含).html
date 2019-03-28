@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        1.外面的元素包含里面的元素，给里面的元素添加margin-top，无法生效。
+        2.解决方法，给外面的元素加上padding或者border分隔外边距。
+     -->
+    <style>
+        .outer {
+            width: 100px;
+            height: 100px;
+            background-color: bisque;
+            border:1px solid #ccc;
+           
+        }
+
+        .inner {
+            width: 50px;
+            height: 50px;
+            background-color: aqua;
+            margin-top: 10px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="inner">
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>

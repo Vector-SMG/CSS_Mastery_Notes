@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    1.flex-basis为auto，flex-grow:1。
+    在没有给ul设置宽度的情况下，会依据内容宽度来确定项目宽度，第二步分配的空间，应该总宽度减去项目宽度，之后进行平分。
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .navbar {
+            display: block;
+        }
+
+        .navbar ul {
+            width: 1000px;
+            border: 1px solid black;
+            list-style: none;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -moz-box;
+            display: flex;
+            padding: 0;
+        }
+
+
+        .navbar li {
+            padding: 2px 5px;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            border: 1px solid black ; 
+            flex-basis: auto;
+            flex-grow: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li>Short</li>
+            <li>Looooooong</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

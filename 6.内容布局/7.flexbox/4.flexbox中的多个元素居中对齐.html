@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .container{
+            height: 10em;
+            border:0.1em dotted red;
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+        
+
+        .author-image,
+        .author-info{
+            display: inline-block;
+            border:0.1em dotted royalblue;
+            vertical-align: middle;
+        }
+
+        .author-info{
+            text-align: left;
+        }
+        .author-name,
+        .author-email{
+            display: block;
+        }
+
+    </style>
+</head>
+<body>
+     
+    <div class="container">
+        <img class="author-image" style="width:100px;height:100px;" 
+        src="http://f.hiphotos.baidu.com/image/pic/item/b3119313b07eca80787730f59f2397dda14483b5.jpg" alt="">
+        <span class="author-info">
+            <span class="author-name">
+                刘伟
+            </span>
+            <span class="author-email">
+                13040839537@163.com
+            </span>
+        </span>
+
+    </div>
+
+</body>
+</html>

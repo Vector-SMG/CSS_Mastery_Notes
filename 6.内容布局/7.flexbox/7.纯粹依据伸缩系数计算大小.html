@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    1.flex-basis:0,flex-grow:1。由于flex-basis为0，容器内容的全部空间会留到第二步分配。
+    2.简写
+        flex-basis:0;
+        flex-grow:1;
+        =>flex:1 0 0%; flex-grow,flex-shrink,flex-basis
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .navbar {
+            display: block;
+        }
+
+        .navbar ul {
+            width: 1000px;
+            border: 1px solid black;
+            list-style: none;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -moz-box;
+            display: flex;
+            padding: 0;
+        }
+
+
+        .navbar li {
+            padding: 2px 5px;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            border: 1px solid black ; 
+            /* flex-basis: 0;
+            flex-grow: 1; */
+            flex:1 0 0%;
+        }
+
+        .navbar li:first-child{
+            flex-grow: 2;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li>Short</li>
+            <li>Looooooong</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

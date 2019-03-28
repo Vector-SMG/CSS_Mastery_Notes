@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    收缩量计算公式
+    
+    flex-basis=b
+    flex-basis=b1
+    flex-basis=b2
+    .
+    .
+    .
+
+    flex-shrink=s
+    flex-shrink=s1
+    flex-shrink=s2
+    .
+    .
+    .
+
+    容器长度=container_length
+    超出宽度=over_length
+
+    每一项的收缩量计算
+    ((b*s)(b*s+b1*s1+b2*s2...))*over_length
+
+    (b1*s)(b*s+b1*s1+b2*s2...)*over_length
+    .
+    .
+    .
+ -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .navbar {
+            display: block;
+        }
+
+        .navbar ul {
+            width: 1000px;
+            border: 1px solid black;
+            list-style: none;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: -webkit-box;
+            display: -moz-box;
+            display: flex;
+            padding: 0;
+            background-color: red;
+        }
+
+
+        .navbar li {
+            padding: 2px 5px;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            border: 1px solid black;
+        }
+
+        .navbar li:first-child {
+            flex: 1 1 800px;
+        }
+
+        .navbar li:last-child {
+            flex: 1 1 500px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="navbar">
+        <ul>
+            <li>Short</li>
+            <li>Looooooong</li>
+        </ul>
+
+    </div>
+</body>
+
+</html>

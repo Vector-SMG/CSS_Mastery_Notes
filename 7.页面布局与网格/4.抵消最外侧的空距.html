@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/grid-base.css">
+    <style>
+        /* 抵消最外侧边距方法:没有特定宽度的非浮动块级元素，会在左右负外边距都设置的情况下扩展其宽度 */
+        .row {
+            margin: 0 -.9%;
+        }
+
+        /* 清除浮动 */
+        .row::after {
+            content: '';
+            display: block;
+            clear: both;
+            height: 0;
+        }
+
+        /* 浮动创建列 
+        1.从左到右书写，左浮动
+        2.不影响宽度的前提下，直接给列容器添加边框和内边距，所以应该设置box-sizing:border
+         */
+        .col {
+            float: left;
+            box-sizing: border-box;
+            /* 由于外边距占据1.8%让浮动换行了，所以要从列宽中减去它 */
+            margin: 0 0.9% 1.375em;
+        }
+
+        /* 通用选择符，直接针对行容器的子元素，同时降低这条通用规则的特殊性 */
+        .row-quartet>* {
+            width: 23.2%;
+        }
+
+        .row-trio>* {
+            width: 31.53333%;
+        }
+
+        .subcategory-header {
+            width: 18.2%;
+        }
+
+        .subcategory-content {
+            width: 78.2%;
+        }
+
+        .subcategory-featured {
+            width: 48.2%;
+        }
+
+        .story {
+            padding: .6875em;
+        }
+
+        .story img {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="masthead">
+        <div class="wrapper">
+            <h1>Important News</h1>
+        </div>
+    </header>
+
+    <nav class="navbar">
+        <div class="wrapper">
+            <ul class="navlist">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">World</a></li>
+                <li><a href="#">Local</a></li>
+                <li><a href="#">Sports</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="wrapper">
+        <section class="subcategory">
+            <div class="row">
+                <header class="col subcategory-header">
+                    <h2>Lorem ipsum</h2>
+                </header>
+
+                <div class="col subcategory-content">
+                    <div class="row row-quartet">
+                        <div class="col subcategory-featured">
+                            <article class="story">
+                                <img src="http://placehold.it/600x300" alt="Dummy image">
+                                <h3><a href="#">Cras suscipit nec leo id.</a></h3>
+                                <p>Autem repudiandae aliquid tempora quos reprehenderit architecto, sequi repellat.</p>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="story">
+                                <img src="http://placehold.it/600x300" alt="Dummy image">
+                                <h3><a href="#">Perferendis, ipsam!</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="story">
+                                <img src="http://placehold.it/600x300" alt="Dummy image">
+                                <h3><a href="#">Curabitur mattis purus nec velit.</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+                        </div>
+                    </div>
+
+                    <div class="row row-quartet">
+                        <div class="col">
+                            <article class="story">
+                                <h3><a href="#">Perferendis, ipsam!</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="story">
+                                <h3><a href="#">Aliquam mattis eros id posuere.</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+
+                        </div>
+                        <div class="col">
+                            <article class="story">
+                                <h3><a href="#">Proin leo felis, semper nec</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+
+                        </div>
+                        <div class="col">
+                            <article class="story">
+                                <h3><a href="#">Aliquam vitae risus tortor. Sed!</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+        <section class="subcategory">
+            <div class="row">
+                <header class="col subcategory-header">
+                    <h2>Dolor sit amet</h2>
+                </header>
+
+                <div class="col subcategory-content">
+                    <div class="row row-trio">
+                        <div class="col">
+                            <article class="story">
+                                <img src="http://placehold.it/600x300" alt="Dummy image">
+                                <h3><a href="#">Ut sit amet mi massa</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+                        </div>
+                        <div class="col">
+                            <article class="story">
+                                <h3><a href="#">Nunc mollis sit amet nunc</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+                            <article class="story">
+                                <h3><a href="#">Duis sed ante enim. Cras</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+
+                        </div>
+                        <div class="col">
+                            <article class="story">
+                                <img src="http://placehold.it/600x300" alt="Dummy image">
+                                <h3><a href="#">Animi, explicabo, ipsum</a></h3>
+                                <p>Neque magnam vero obcaecati facere nobis sint dolore accusamus vitae consequuntur ad
+                                    necessitatibus, laborum molestiae.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    1. align-content对容器中多行的作用，就相当于justify-content对主轴内容排布的作用非常相似
+    2. 下述代码，min-height设置最小高度
+
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            margin: 0;
+            padding: 1em;
+            list-style: none;
+            border:1px solid #C9E1F4;
+            max-width: 300px;
+            align-content: space-between;
+            min-height: 300px;
+        }
+
+        .tags li {
+            display: inline-block;
+            margin: .5em;
+            flex:1 0 auto;
+            max-width: 150px;
+            min-height: 50px;
+        }
+
+        .tags a {
+            position: relative;
+            display: block;
+            padding: .25em .5em .25em .25em;
+            background-color: #C9E1F4;
+            color: #28448F;
+            border-radius: 0 .25em .25em 0;
+            line-height: 1.5;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        .tags a:before {
+            position: absolute;
+            content: "";
+            width: 0;
+            height: 0;
+            border: 1em solid transparent;
+            border-right-width: .5em;
+            border-right-color: #C9E1F4;
+            left: -1.5em;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="tags">
+            <li><a href="/Binary_planet">123</a></li>
+            <li><a href="/Binary_planet">456</a></li>
+            <li><a href="/Binary_planet">789</a></li>
+            <li><a href="/Binary_planet">101112</a></li>
+            <li><a href="/Binary_planet">131415</a></li>
+            <li><a href="/Binary_planet">161718</a></li>
+            <li><a href="/Binary_planet">192021</a></li>
+            <li><a href="/Binary_planet">192021</a></li>
+        </ul>
+
+    </div>
+
+
+</body>
+
+</html>
