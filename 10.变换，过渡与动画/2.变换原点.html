@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        1. 变换原点。
+           1.1 默认情况下，是以元素边框盒子的中心作为原点。控制原点的属性叫transform-origin.
+           1.2 默认情况下，给SVG元素应用变换，有些地方不一样。transform-origin属性的默认值是元素左上角
+
+        2. 变换原点。transform-origin可以设置1~3个值，分辨代表x,y,z轴。
+           2.1 一个值，则第二个默认为center
+                transform:10px <==> transform:10px center。
+
+     -->
+
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background-color: #eee;
+            outline: 1px dotted;
+        }
+
+        .box-transform {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background-color: #eee;
+            outline: 1px solid;
+            -webkit-transform-origin: 10px 10px;
+            -moz-transform-origin: 10px 10px;
+            -ms-transform-origin: 10px 10px;
+            -o-transform-origin: 10px 10px;
+            transform-origin: 100px 100px;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box-transform"></div>
+</body>
+
+</html>

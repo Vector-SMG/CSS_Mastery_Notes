@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <!-- 
+        1. 二维变换，改变的是元素所在的坐标系。元素本身还在原来的位置，他们畸变后的影像
+        已经变换了
+        2. 给元素应用变换，会在元素最初所在的空间创建所谓的局部坐标系统(视口坐标系统)。
+        3. 变换后的元素超出了设置overflow属性的元素，导致出现滚动条。这也意味着，向上或向下平移可以隐藏
+        元素。
+
+        例如:下面代码元素的宽和高:100*100
+            经过旋转45度后，宽和高变为141.42*141.42
+
+
+     -->
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background-color: #eee;
+            outline: 1px dotted;
+        }
+
+        .box-transform {
+            width: 100px;
+            height: 100px;
+            margin-top: 20px;
+            position: absolute;
+            top: 200px;
+            left: 200px;
+            background-color: #eee;
+            outline: 1px solid;
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+    <div class="box-transform"></div>
+</body>
+
+</html>
