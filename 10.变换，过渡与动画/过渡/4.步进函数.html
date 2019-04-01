@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- 
+        1. 可以通过关键字和cubic-bezier()函数指定缓动效果。还可以指定过渡中每一步的状态。
+        2. steps(6,start)，分为正向过渡和反向过渡，反向过渡仍然有6个步骤。
+        3. 举例，steps(6,start),反向过渡的话，仍然有6个步骤，此时这几个步骤不会与原来的背景位置吻合，从而导致动画错乱。
+        4. 避免上述问题的方法:
+            4.1 使用不同的正向和方向过渡。设置初始状态，持续时间为0。悬停状态，持续时间为.6s。从悬停到鼠标移开，动画会立即恢复
+
+                .hello{
+                    transition:background-position 0s steps(6)
+                }
+
+                .hello:hover{
+                    transition-duration:.6s;
+                }
+
+            4.2 黏着状态。将初始值设置无限大，让其无法感知变化。
+                  .hello{
+                    transition:background-position 9999999999999s steps(6)
+                }
+
+                .hello:hover{
+                    transition-duration:.6s;
+                }
+            
+                
+     -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>Step animation with transitions</title>
+    <style>
+        .hello {
+            width: 200px;
+            height: 200px;
+            border: 2px solid #ccc;
+            background: url(images/step-animation.png) no-repeat 0 -1200px;
+            -webkit-transition: background-position 0s .3s steps(6, start);
+            transition: background-position 0s .3s steps(6, start);
+        }
+
+        .hello:hover {
+            -webkit-transition-delay: 0;
+            transition-delay: 0;
+            -webkit-transition-duration: .6s;
+            transition-duration: .6s;
+            background-position: 0 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="hello">
+
+    </div>
+
+</body>
+
+</html>

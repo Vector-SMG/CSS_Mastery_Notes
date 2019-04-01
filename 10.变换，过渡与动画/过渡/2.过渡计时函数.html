@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        1.默认情况下，过渡变化并不是每一帧相同，开始时稍慢些，然后迅速加快，到接近最终值在逐渐变慢
+        2.缓动函数，由transition-timing-function属性决定
+        3.缓动函数分类:
+            linear，均匀变化
+            ease,开始稍慢，然后迅速加快，接近最终值逐渐变慢。
+            ease-in,开始慢后来快
+            ease-out,开始快后来慢
+            ease-in-out,两头慢，中间快
+      -->
+
+
+    <style>
+        button {
+            border: 0;
+            padding: .5em 1em;
+            color: #fff;
+            border-radius: .25em;
+            background-color: #173b6d;
+            box-shadow: 0 .25em 0 rgba(23, 59, 109, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.3);
+            transition: all .25 ;
+            outline: none;
+        }
+
+        button:active {
+            box-shadow: 0 0 0 rba(23, 59, 109, 0.3), inset 0 1px 0 rgba(0, 0, 0, 0.3);
+            transform: translateY(.25em);
+        }
+    </style>
+
+</head>
+
+<body>
+    <button>Press me!</button>
+</body>
+
+
+
+</body>
+
+</html>

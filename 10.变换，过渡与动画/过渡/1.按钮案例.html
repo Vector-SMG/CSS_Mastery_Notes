@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        1.transition-property:all;//指定变换的属性,多个属性用逗号隔开
+          transition-duration:.15s;//指定变换时长
+
+          下图中，可以写为下述
+          
+          transition-property:transform,box-shadow
+        
+        2.兼容旧版本
+            transition:transform .25s
+            -webkit-transition:-webkit-transform .25s
+
+     -->
+    <style>
+        button {
+            border: 0;
+            padding: .5em 1em;
+            color:#fff;
+            border-radius: .25em;
+            background-color: #173b6d;
+            box-shadow: 0 .25em 0 rgba(23,59,109,0.3),inset 0 1px 0 rgba(0,0,0,0.3);
+            transition:all 150ms;
+            outline: none;
+        }
+        button:active{
+            box-shadow: 0 0 0 rba(23,59,109,0.3),inset 0 1px 0 rgba(0,0,0,0.3);
+            transform: translateY(.25em);
+        }
+    </style>
+
+</head>
+
+<body>
+    <button>Press me!</button>
+</body>
+
+</html>

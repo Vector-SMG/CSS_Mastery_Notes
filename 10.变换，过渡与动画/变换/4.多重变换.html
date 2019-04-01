@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- 
+    修改变换
+    1. 声明多个变换后，增加新变换，不能直接在原来的基础上添加，二要重新声明整套变换。
+        .thing{
+            transform:translate(0,100px)
+        }
+        -> 错误
+        .thing:hover{
+            transform:rotate(45deg)
+        }
+
+        -> 正确
+        .thing:hover{
+             transform:translate(0,100px) transform:rotate(45deg)
+        }
+
+
+ -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Baskerville, Times, Times New Roman, serif;
+            font-size: 1.25em;
+            padding: 3em;
+        }
+
+        h1 {
+            font-weight: 400;
+        }
+
+
+        .rules {
+            list-style: none;
+            counter-reset: rulecount 2;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rules li {
+            counter-increment: rulecount;
+            line-height: 1.5;
+            min-height: 1.75em;
+            max-width: 35em;
+            border-left: 1.5em solid #777;
+            padding-left: .5em;
+            position: relative;
+            margin-bottom: .5em;
+        }
+
+        .rules li::before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding-right: .25em;
+            display: block;
+            color: #fff;
+            line-height: 1.5em;
+            padding-left: .25em;
+            content: '$ 'counter(rulecount);
+            -webkit-transform-origin: 100% 100%;
+            -moz-transform-origin: 100% 100%;
+            -ms-transform-origin: 100% 100%;
+            -o-transform-origin: 100% 100%;
+            transform-origin: 100% 100%;
+            -webkit-transform: translate(-100%, -100%) rotate(-90deg);
+            -moz-transform: translate(-100%, -100%) rotate(-90deg);
+            -ms-transform: translate(-100%, -100%) rotate(-90deg);
+            -o-transform: translate(-100%, -100%) rotate(-90deg);
+            transform: translate(-100%, -100%) rotate(-90deg);
+        }
+    </style>
+</head>
+
+<body>
+    <h1>今日新闻</h1>
+
+    <ol class="rules" start="3">
+        <li>习近平向第30届阿盟首脑理事会会议致贺电</li>
+        <li>全面深化改革重在落实 理上网来</li>
+        <li>中美磋商越到关键处，越要扩大利益交集</li>
+        <li>“壮丽70年·奋斗新时代”大型主题采访活动全面启动</li>
+    </ol>
+</body>
+
+</html>
