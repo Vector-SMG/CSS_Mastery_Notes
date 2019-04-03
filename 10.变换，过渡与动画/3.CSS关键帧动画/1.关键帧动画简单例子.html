@@ -5,6 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+
+    <!-- 
+        1.animation-name，指定动画序列名称
+        2.animation-duration,动画持续时间
+        3.animation-iteration-count,重复次数
+        4.animation-timing-function,计时函数
+        5.animation-fill-mode,设置填充模式。默认情况下，第一个关键帧中的属性在动画运行前不会被应用
+        。如果我们指定了backwards，那么相应的属性就会反向填充，即第一个关键帧中的属性立即应用。即使动画有延迟或一开始
+        被暂停。both，同时应用正向和反向填充。forward表示应用最后一个关键帧的计算样式。
+        6.steps(3,start),步进函数会将它向前移动相同的距离。
+     -->
     <style>
         body{
             background-color:#663399;
@@ -26,6 +37,27 @@
             display: inline-block;
             font-weight: 400;
             opacity: .6;
+        }
+
+        .box-outer{
+            display: inline-block;
+            animation:shift 4.5s 1s steps(3,start) backwards;
+        }
+
+         /* animation:roll 1.5s 1s 3 linear,inner控制翻转 */
+         .box-inner{
+            display: inline-block;
+            width:.74em;
+            height: .74em;
+            background-color:#fff;
+            animation-name: roll;
+            animation-duration: 1.5s;
+            animation-delay: 1s;
+            /* 重复次数 */
+            animation-iteration-count: 3;
+            animation-timing-function: linear;
+            animation-fill-mode: backwards;
+            transform-origin: bottom right;
         }
 
         @keyframes roll{
@@ -77,25 +109,9 @@
         }
 
 
-        .box-outer{
-            display: inline-block;
-            animation:shift 4.5s 1s steps(3,start) backwards;
-        }
+      
 
-        /* animation:roll 1.5s 1s 3 linear,inner控制翻转 */
-        .box-inner{
-            display: inline-block;
-            width:.74em;
-            height: .74em;
-            background-color:#fff;
-            animation-name: roll;
-            animation-duration: 1.5s;
-            animation-delay: 1s;
-            /* 重复次数 */
-            animation-iteration-count: 3;
-            animation-timing-function: linear;
-            transform-origin: bottom right;
-        }
+       
     
     </style>
 </head>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- 
+        1.要在变换的元素的父元素上设置perspective
+        2.perspective数值表示观察点位于屏幕前方多远。恰当的距离一般是600-1000像素。
+
+     -->
+    <style>
+        .wrapper-2 {
+            -webkit-perspective: 140px;
+            /* 1 */
+            -moz-perspective: 140px;
+            /* 1 */
+            -o-perspective: 140px;
+            /* 1 */
+            perspective: 140px;
+            /* 1 */
+        }
+
+        .wrapper-3 {
+            -webkit-perspective: 800px;
+            /* 1 */
+            -moz-perspective: 800px;
+            /* 1 */
+            -o-perspective: 800px;
+            /* 1 */
+            perspective: 800px;
+            /* 1 */
+        }
+
+        [class^="wrapper"] {
+            width: 150px;
+            display: -ms-flexbox;
+            /* 2 */
+            display: -webkit-box;
+            /* 2 */
+            display: -webkit-flex;
+            /* 2 */
+            display: -moz-box;
+            /* 2 */
+            display: flex;
+            /* 2 */
+        }
+
+        .box {
+            margin: auto;
+            border: 2px solid;
+            width: 100px;
+            height: 100px;
+            -webkit-transform: rotateY(60deg);
+            /* 3 */
+            -moz-transform: rotateY(60deg);
+            /* 3 */
+            -o-transform: rotateY(60deg);
+            /* 3 */
+            transform: rotateY(60deg);
+            /* 3 */
+        }
+
+        html,body{
+            height: 100%;
+        }
+
+        body{
+            display: flex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper-1">
+        <div class="box"></div>
+    </div>
+
+    <div class="wrapper-2">
+        <div class="box"></div>
+    </div>
+    <div class="wrapper-3">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>
