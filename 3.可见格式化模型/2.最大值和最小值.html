@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <!-- 
+      1. css中，设置任何高度值的时候都应该慎重。因为元素的高度取决于内容，不需要明确指定。否则就会超出
+      高度固定的盒子
+      2.由于种种元素我们需要设定默认高度，也最好使用min-height
+
+     -->
+
+    <style>
+      .outer {
+        width: 100px;
+        height: 100px;
+        background-color: aqua;
+      }
+
+      .inner {
+        width: 50px;
+        min-height: 50px;
+        max-height: 70px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outer">
+      <div class="inner">
+        哈哈 .mybox { width: 80px; height: 80px; padding: 5px; border: 5px
+        solid; margin: 10px; } .mybox { width: 80px; height: 80px; padding: 5px;
+        border: 5px solid; margin: 10px; }
+      </div>
+    </div>
+  </body>
+</html>

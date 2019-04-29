@@ -1,33 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <!-- 
-        上下方位的内外边距，仍然 基于包含块的宽度来计算
+        1.盒子模型，从里到外，分为content,padding,border,margin.
+        2.box-sizing,默认是content-box,width只包括content.
+        3.box-sizing是border-box的情况下，width会包括padding,border.
+        4.应用场景:让子元素width固定在父元素的10%,一般使用border-box.
+        5.outline,是一种轮廓线，位于border之外，这条线不影响布局，一般用作调试。
      -->
     <style>
-        .group{
-            width: 100px;
-            height: 200px;
-            background-color: royalblue;
-        }
-        .block{
-            margin-left: 5%; 
-            margin-top:5%;
-            width: 50px;
-            height: 50px;
-            background-color: azure;
-        }
-    </style>
-</head>
-<body>
-    <div class="group">
-        <div class="block">
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
 
-        </div>
-    </div>
-</body>
+      .mybox {
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+        border: 5px solid;
+        margin: 10px;
+        outline: 5px solid red;
+      }
+
+      .mybox1 {
+        box-sizing: border-box;
+        width: 80px;
+        height: 80px;
+        padding: 5px;
+        border: 5px solid;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mybox"></div>
+    <div class="mybox1"></div>
+  </body>
 </html>
