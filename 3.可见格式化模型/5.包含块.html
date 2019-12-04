@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .relative {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: brown;
+        color: white;
+      }
+      .absolute {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        top: 10px;
+        background-color: brown;
+        color: white;
+      }
+      .fixed {
+        position: fixed;
+        bottom: 0px;
+        width: 100px;
+        height: 100px;
+        background-color: brown;
+        color: white;
+      }
+    </style>
+  </head>
+  <!-- 
+    1.将一个元素的内外边距设置为百分比。包含块是决定百分比值的依据。
+    2.静态定位，包含块:最近的父元素。
+    3.相对定位，包含块:最近的父元素。相对起始位置的定位，top,right,bottom,left等属性。
+    4.绝对定位，包含块:距离最近的定位祖先。如果没有定位祖先，那么相对于根元素即html元素。也有top,right,bottom,left等属性。
+绝对定位脱离了文档流，可能会遮盖其他元素。为了控制盒子层叠次序，可以设置z-index属性，z-index越大，离用户眼睛越近。
+    5.固定定位，包含块:视口,viewport。也有top,right,bottom,left等属性。
+   -->
+  <body>
+    <div class="relative">
+      <div class="absolute">
+        你好
+      </div>
+    </div>
+    <div class="fixed">
+      你好
+    </div>
+  </body>
+</html>

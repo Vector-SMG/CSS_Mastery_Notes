@@ -6,10 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Document</title>
     <!-- 
-      1. css中，设置任何高度值的时候都应该慎重。因为元素的高度取决于内容，不需要明确指定。否则就会超出
-      高度固定的盒子
-      2.由于种种元素我们需要设定默认高度，也最好使用min-height
-
+      1. css中，块级别元素可以自动填充父元素的宽度,没有指定width的情况下，实际宽度>minWidth && 实际宽度<maxWidth。
+      2. css中，高度的max-height将会失效，因为元素的高度取决于包含的内容。最好使用min-height.
      -->
 
     <style>
@@ -21,6 +19,7 @@
 
       .inner {
         width: 50px;
+        max-width: 99px;
         min-height: 50px;
         max-height: 70px;
         background-color: red;
